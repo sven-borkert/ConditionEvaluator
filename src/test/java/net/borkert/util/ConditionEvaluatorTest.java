@@ -42,6 +42,10 @@ public class ConditionEvaluatorTest {
     assertTrue(ConditionEvaluator.evaluate("50 < 100"));
     assertTrue(ConditionEvaluator.evaluate("100 <= 100"));
     assertTrue(ConditionEvaluator.evaluate("\"Hello.txt\" DOS \"*.txt\""));
+    assertFalse(ConditionEvaluator.evaluate("\"Test with blanks\" EQ \"Test with blanks \""));
+    assertTrue(ConditionEvaluator.evaluate("\"Test with blanks\" EQ \"Test with blanks\""));
+    assertFalse(ConditionEvaluator.evaluate("'Test with blanks' EQ 'Test with blanks '"));
+    assertTrue(ConditionEvaluator.evaluate("'Test with blanks' EQ 'Test with blanks'"));
   }
 
   @Test
